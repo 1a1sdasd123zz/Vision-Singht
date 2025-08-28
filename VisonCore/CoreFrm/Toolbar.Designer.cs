@@ -1,4 +1,4 @@
-﻿namespace VisonCore.CoreFrm
+﻿namespace VisionCore.CoreFrm
 {
     partial class Toolbar
     {

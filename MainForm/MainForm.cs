@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using HardWareNet;
 using Share;
-using ToolBar = VisonCore.CoreFrm.Toolbar;
+using ToolBar = VisionCore.CoreFrm.Toolbar;
 
 namespace Vision_Sight;
 public partial class MainForm : Form
@@ -92,7 +92,7 @@ public partial class MainForm : Form
 
     private void btn_ShowTool_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
     {
-        frm_Toolbar.RestoreToDefault();
+        //frm_Toolbar.RestoreToDefault();
     }
 
   private void btn_HardwareCamera_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

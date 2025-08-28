@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Share;
 
-namespace VisonCore.CoreFrm
+namespace VisionCore.CoreFrm
 {
     public partial class Toolbar : UserControl,IRestorable
     {

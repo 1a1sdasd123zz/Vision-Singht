@@ -74,8 +74,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="VisonCore">
-      <HintPath>..\VisonCore\obj\Debug\VisonCore.dll</HintPath>
+    <Reference Include="VisionCore">
+      <HintPath>..\VisonCore\bin\Debug\VisionCore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
