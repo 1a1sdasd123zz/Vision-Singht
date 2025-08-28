@@ -91,7 +91,6 @@
             this.split_Display.Appearance.BorderColor = System.Drawing.Color.SlateBlue;
             this.split_Display.Appearance.Options.UseBackColor = true;
             this.split_Display.Appearance.Options.UseBorderColor = true;
-            this.tabPanel_Main.SetColumn(this.split_Display, 0);
             this.split_Display.Dock = System.Windows.Forms.DockStyle.Fill;
             this.split_Display.Location = new System.Drawing.Point(19, 18);
             this.split_Display.Name = "split_Display";
@@ -108,7 +107,6 @@
             this.split_Display.Panel2.Appearance.BackColor = System.Drawing.Color.SlateBlue;
             this.split_Display.Panel2.Appearance.Options.UseBackColor = true;
             this.split_Display.Panel2.Text = "Panel2";
-            this.tabPanel_Main.SetRow(this.split_Display, 0);
             this.split_Display.Size = new System.Drawing.Size(1373, 683);
             this.split_Display.SplitterPosition = 621;
             this.split_Display.TabIndex = 2;
@@ -574,6 +572,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "面阵相机测试界面";
             this.Load += new System.EventHandler(this.Frm_Camera2D_Load);
+            this.Shown += new System.EventHandler(this.Frm_Camera2D_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.split_Display.Panel1)).EndInit();
             this.split_Display.Panel1.ResumeLayout(false);
             this.split_Display.Panel1.PerformLayout();
@@ -637,5 +636,5 @@
     private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.Utils.Layout.TablePanel tabPanel_Main;
         private DevExpress.XtraEditors.ComboBoxEdit cmb_HardSource;
-    }
+  }
 }

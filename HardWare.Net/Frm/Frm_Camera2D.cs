@@ -3,12 +3,14 @@ using System.Windows.Forms;
 using Cognex.VisionPro;
 using HardWareNet.Base;
 using HardWareNet.Enum;
+using VisionCore.ShowFrm;
 
 namespace HardWareNet.Frm;
 
 public partial class Frm_Camera2D : Form
 {
   private Camera2DBase Camera2D;
+  private ShowDisplayFrm user_ShowDisplay;
   public Frm_Camera2D()
   {
     InitializeComponent();
@@ -88,14 +90,14 @@ public partial class Frm_Camera2D : Form
 
   private void UpdateUIImage(ICogImage imageData)
   {
-    //if (user_ShowDisplay.InvokeRequired)
-    //{
-    //  user_ShowDisplay.BeginInvoke(new Action<ICogImage>(UpdateUIImage), imageData);
-    //}
-    //else
-    //{
-    //  user_ShowDisplay.ContinuousShowImage = imageData;
-    //}
+    if (user_ShowDisplay.InvokeRequired)
+    {
+      user_ShowDisplay.BeginInvoke(new Action<ICogImage>(UpdateUIImage), imageData);
+    }
+    else
+    {
+      user_ShowDisplay.ContinuousShowImage = imageData;
+    }
   }
 
   private void txt_Exposure_EditValueChanged(object sender, EventArgs e)
@@ -193,5 +195,11 @@ public partial class Frm_Camera2D : Form
       btn_Close.Enabled = true;
     }
   }
+
+    private void Frm_Camera2D_Shown(object sender, EventArgs e)
+    {
+      user_ShowDisplay = new ShowDisplayFrm();
+      split_Display.Panel2.Controls.Add(user_ShowDisplay);
+    }
 }
 

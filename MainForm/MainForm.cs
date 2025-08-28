@@ -8,6 +8,7 @@ using ToolBar = VisionCore.CoreFrm.Toolbar;
 namespace Vision_Sight;
 public partial class MainForm : Form
 {
+    readonly Frm_Splash frm_Splash = new();
     private ToolBar frm_Toolbar;
 
     public MainForm()
@@ -17,7 +18,7 @@ public partial class MainForm : Form
     }
     private void MainForm_Load(object sender, EventArgs e)
     {
-        Frm_Splash frm_Splash = new();
+        
         frm_Splash.Show();
         frm_Splash.lbl_Splash.Text = "系统启动中……";
         frm_Splash.lbl_Splash.Refresh();
@@ -28,12 +29,16 @@ public partial class MainForm : Form
         //    MessageBox.Show(logmsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         //    return;
         //}
+    }
+
+    private void MainForm_Shown(object sender, EventArgs e)
+    {
         frm_Splash.lbl_Splash.Text = "相机加载中……";
         frm_Splash.lbl_Splash.Refresh();
         HardWareNet.HardCamera.Instance.Initialization();
         frm_Splash.lbl_Splash.Text = "相机完成……";
         frm_Splash.Close();
-        this.WindowState = FormWindowState.Maximized;
+        WindowState = FormWindowState.Maximized;
     }
 
     #region 视图
@@ -99,4 +104,5 @@ public partial class MainForm : Form
   {
       HardCamera.Instance.GetFormCamera2D.Show();
   }
+
 }

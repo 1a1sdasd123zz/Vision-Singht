@@ -60,8 +60,9 @@
     <Reference Include="DevExpress.XtraPrinting.v24.2, Version=24.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v24.2, Version=24.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v24.2, Version=24.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="HardWareNet">
-      <HintPath>..\..\视觉软件项目\相机硬件\HardWare.Net\bin\Debug\HardWareNet.dll</HintPath>
+    <Reference Include="HardWareNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HardWare.Net\bin\Debug\HardWareNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.dev_MainBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.dx_ToolBar = new DevExpress.XtraBars.Bar();
             this.dev_MainStatusBar = new DevExpress.XtraBars.Bar();
@@ -40,6 +40,7 @@
             this.btn_View = new DevExpress.XtraBars.BarSubItem();
             this.btn_DefaultView = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ShowTool = new DevExpress.XtraBars.BarCheckItem();
+            this.btn_HardwareCamera = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -66,7 +67,6 @@
             this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
             this.document3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.documentGroup2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
-            this.btn_HardwareCamera = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.dev_MainBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev_MainDockManager)).BeginInit();
             this.dev_ToolPanel.SuspendLayout();
@@ -160,9 +160,9 @@
             this.btn_Login.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Login.ImageOptions.SvgImage")));
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            toolTipItem3.Text = "登录";
-            superToolTip3.Items.Add(toolTipItem3);
-            this.btn_Login.SuperTip = superToolTip3;
+            toolTipItem1.Text = "登录";
+            superToolTip1.Items.Add(toolTipItem1);
+            this.btn_Login.SuperTip = superToolTip1;
             // 
             // btn_View
             // 
@@ -186,6 +186,13 @@
             this.btn_ShowTool.Id = 14;
             this.btn_ShowTool.Name = "btn_ShowTool";
             this.btn_ShowTool.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ShowTool_CheckedChanged);
+            // 
+            // btn_HardwareCamera
+            // 
+            this.btn_HardwareCamera.Caption = "相机模块";
+            this.btn_HardwareCamera.Id = 17;
+            this.btn_HardwareCamera.Name = "btn_HardwareCamera";
+            this.btn_HardwareCamera.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HardwareCamera_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -405,13 +412,6 @@
             this.document3.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
             this.document3.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // btn_HardwareCamera
-            // 
-            this.btn_HardwareCamera.Caption = "相机模块";
-            this.btn_HardwareCamera.Id = 17;
-            this.btn_HardwareCamera.Name = "btn_HardwareCamera";
-            this.btn_HardwareCamera.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HardwareCamera_ItemClick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -430,6 +430,7 @@
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dev_MainBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev_MainDockManager)).EndInit();
             this.dev_ToolPanel.ResumeLayout(false);

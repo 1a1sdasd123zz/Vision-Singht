@@ -39,84 +39,39 @@ namespace Vision_Sight
             string newPath = string.Join(";", dllPaths) + ";" + currentPath;
             Environment.SetEnvironmentVariable("PATH", newPath);
 
+            // 4. 注册托管程序集解析事件（处理托管DLL如MvCameraControl.Net.dll）
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //if (!LoadAssemblies())
-            //{
-            //    MessageBox.Show("关键DLL加载失败，程序无法启动！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
             Application.Run(new MainForm());
         }
 
-        static bool LoadAssemblies()
+        
+        private static Assembly? CurrentDomain_AssemblyResolve(object? sender, ResolveEventArgs args)
         {
+            // 解析程序集名称（去掉版本信息，只保留文件名）
+            string assemblyName = new AssemblyName(args.Name).Name + ".dll";
+            if (string.IsNullOrEmpty(assemblyName)) return null;
+
+            // 搜索libs目录及其所有子目录
+            string libsRootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "libs");
+            if (!Directory.Exists(libsRootPath)) return null;
+
+            // 递归查找目标DLL
+            string[] foundDlls = Directory.GetFiles(libsRootPath, assemblyName, SearchOption.AllDirectories);
+            if (foundDlls.Length == 0) return null;
+
+            // 加载找到的第一个DLL
             try
             {
-                // 指定根目录（debug目录下的libs文件夹）
-                string rootFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "libs");
-
-                // 检查根目录是否存在
-                if (!Directory.Exists(rootFolder))
-                {
-                    Console.WriteLine($"根文件夹不存在: {rootFolder}");
-                    return false;
-                }
-
-                // 获取所有子目录中的DLL文件（包括当前目录）
-                string[] dllFiles = Directory.GetFiles(
-                    rootFolder,
-                    "*.dll",
-                    SearchOption.AllDirectories  // 关键参数：搜索所有子目录
-                );
-
-                if (dllFiles.Length == 0)
-                {
-                    Console.WriteLine("指定文件夹及其子文件夹中没有找到DLL文件");
-                    return false;
-                }
-
-                // 存储成功加载的程序集
-                List<Assembly> loadedAssemblies = new List<Assembly>();
-
-                // 逐个加载DLL
-                foreach (string dllPath in dllFiles)
-                {
-                    try
-                    {
-                        Assembly assembly = Assembly.LoadFrom(dllPath);
-                        loadedAssemblies.Add(assembly);
-                        Console.WriteLine($"成功加载: {dllPath}");
-                    }
-                    catch (BadImageFormatException)
-                    {
-                        // 非.NET程序集（如原生C++ DLL）
-                        Console.WriteLine($"跳过非.NET程序集: {dllPath}");
-                    }
-                    catch (UnauthorizedAccessException)
-                    {
-                        // 没有访问权限
-                        Console.WriteLine($"没有权限访问: {dllPath}");
-                    }
-                    catch (PathTooLongException)
-                    {
-                        // 路径过长
-                        Console.WriteLine($"路径过长: {dllPath}");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"加载 {dllPath} 失败: {ex.Message}");
-                    }
-                }
-
-                Console.WriteLine($"\n加载完成，共成功加载 {loadedAssemblies.Count} 个DLL");
-                return true;
+                return Assembly.LoadFrom(foundDlls[0]);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"发生错误: {ex.Message}");
+                Console.WriteLine($"加载程序集 {assemblyName} 失败：{ex.Message}");
+                return null;
             }
-            return false;
         }
     }
 }
