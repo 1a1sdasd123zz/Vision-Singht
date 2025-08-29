@@ -65,8 +65,9 @@
       <HintPath>C:\Program Files (x86)\MVS\Development\DotNet\AnyCpu\MvCameraControl.Net.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="MVSDK_Net">
-      <HintPath>..\Debug\libs\CameraLibs\iRAYPLE\MVSDK_Net.dll</HintPath>
+    <Reference Include="MVSDK_Net, Version=1.3.0.9252, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\HuarayTech\MV Viewer\Development\DOTNET DLL\IMV\DOTNET_4.0\AnyCpu\MVSDK_Net.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />

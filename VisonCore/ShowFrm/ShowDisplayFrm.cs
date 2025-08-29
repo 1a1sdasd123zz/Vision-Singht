@@ -1,8 +1,5 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Cognex.VisionPro;
-using Cognex.VisionPro.Display;
 
 namespace VisionCore.ShowFrm;
 
@@ -15,34 +12,34 @@ public partial class ShowDisplayFrm : UserControl
     }
     public ICogImage ShowImage
     {
-        get => cog_RecordDisplay.Image;
+        get => cog_ShowRecordDisplay.Image;
         set
         {
-            cog_RecordDisplay.StaticGraphics.Clear();
-            cog_RecordDisplay.InteractiveGraphics.Clear();
-            cog_RecordDisplay.Image = value;
-            cog_RecordDisplay.AutoFit = true;
+            cog_ShowRecordDisplay.StaticGraphics.Clear();
+            cog_ShowRecordDisplay.InteractiveGraphics.Clear();
+            cog_ShowRecordDisplay.Image = value;
+            cog_ShowRecordDisplay.AutoFit = true;
         }
     }
     public ICogImage ContinuousShowImage
     {
-        get => cog_RecordDisplay.Image;
+        get => cog_ShowRecordDisplay.Image;
         set
         {
-            cog_RecordDisplay.StaticGraphics.Clear();
-            cog_RecordDisplay.InteractiveGraphics.Clear();
-            cog_RecordDisplay.Image = value;
+            cog_ShowRecordDisplay.StaticGraphics.Clear();
+            cog_ShowRecordDisplay.InteractiveGraphics.Clear();
+            cog_ShowRecordDisplay.Image = value;
         }
     }
     public ICogRecord ShowRecord
     {
-        get => cog_RecordDisplay.Record;
+        get => cog_ShowRecordDisplay.Record;
         set
         {
-            cog_RecordDisplay.StaticGraphics.Clear();
-            cog_RecordDisplay.InteractiveGraphics.Clear();
-            cog_RecordDisplay.Record = value;
-            cog_RecordDisplay.AutoFit = true;
+            cog_ShowRecordDisplay.StaticGraphics.Clear();
+            cog_ShowRecordDisplay.InteractiveGraphics.Clear();
+            cog_ShowRecordDisplay.Record = value;
+            cog_ShowRecordDisplay.AutoFit = true;
         }
     }
     public ShowDisplayFrm()
@@ -50,10 +47,9 @@ public partial class ShowDisplayFrm : UserControl
         InitializeComponent();
     }
 
-    private void cog_RecordDisplay_DoubleClick(object sender, EventArgs e)
+    private void ShowDisplayFrm_Load(object sender, System.EventArgs e)
     {
-        //var frm = new MaxRecordDisplay(ShowImage);
-        //frm.Show();
+        
     }
 }
 

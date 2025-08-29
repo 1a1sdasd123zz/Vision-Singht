@@ -1,42 +1,45 @@
 ﻿using Cognex.VisionPro;
 
-namespace VisionCore.ShowFrm;
-
-partial class ShowDisplayFrm
+namespace VisionCore.ShowFrm
 {
-  /// <summary> 
-  /// 必需的设计器变量。
-  /// </summary>
-  private System.ComponentModel.IContainer components = null;
-
-  /// <summary> 
-  /// 清理所有正在使用的资源。
-  /// </summary>
-  /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
-  protected override void Dispose(bool disposing)
+  partial class ShowDisplayFrm
   {
-    if (disposing && (components != null))
+    /// <summary> 
+    /// 必需的设计器变量。
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary> 
+    /// 清理所有正在使用的资源。
+    /// </summary>
+    /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+    protected override void Dispose(bool disposing)
     {
-      components.Dispose();
+      if (disposing && (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
     }
-    base.Dispose(disposing);
-  }
 
-  #region 组件设计器生成的代码
+    #region 组件设计器生成的代码
 
-  /// <summary> 
-  /// 设计器支持所需的方法 - 不要修改
-  /// 使用代码编辑器修改此方法的内容。
-  /// </summary>
-  private void InitializeComponent()
-  {
+    /// <summary> 
+    /// 设计器支持所需的方法 - 不要修改
+    /// 使用代码编辑器修改此方法的内容。
+    /// </summary>
+    private void InitializeComponent()
+    {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowDisplayFrm));
       this.grc_ShowName = new DevExpress.XtraEditors.GroupControl();
-      this.cog_RecordDisplay = new Cognex.VisionPro.CogRecordDisplay();
+      this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+      this.cog_ShowRecordDisplay = new Cognex.VisionPro.CogRecordDisplay();
       ((System.ComponentModel.ISupportInitialize)(this.grc_ShowName)).BeginInit();
       this.grc_ShowName.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.cog_RecordDisplay)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+      this.tablePanel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.cog_ShowRecordDisplay)).BeginInit();
       this.SuspendLayout();
       // 
       // grc_ShowName
@@ -45,7 +48,7 @@ partial class ShowDisplayFrm
       this.grc_ShowName.Appearance.Options.UseBackColor = true;
       this.grc_ShowName.Appearance.Options.UseBorderColor = true;
       this.grc_ShowName.Appearance.Options.UseForeColor = true;
-      this.grc_ShowName.AppearanceCaption.BorderColor = System.Drawing.Color.SlateBlue;
+      this.grc_ShowName.AppearanceCaption.BorderColor = System.Drawing.Color.Black;
       this.grc_ShowName.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.grc_ShowName.AppearanceCaption.ForeColor = System.Drawing.Color.Transparent;
       this.grc_ShowName.AppearanceCaption.Options.UseBorderColor = true;
@@ -53,7 +56,7 @@ partial class ShowDisplayFrm
       this.grc_ShowName.AppearanceCaption.Options.UseForeColor = true;
       this.grc_ShowName.AutoSize = true;
       this.grc_ShowName.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grc_ShowName.CaptionImageOptions.Image")));
-      this.grc_ShowName.Controls.Add(this.cog_RecordDisplay);
+      this.grc_ShowName.Controls.Add(this.tablePanel1);
       this.grc_ShowName.Dock = System.Windows.Forms.DockStyle.Fill;
       this.grc_ShowName.GroupStyle = DevExpress.Utils.GroupStyle.Title;
       this.grc_ShowName.Location = new System.Drawing.Point(0, 0);
@@ -62,23 +65,40 @@ partial class ShowDisplayFrm
       this.grc_ShowName.TabIndex = 0;
       this.grc_ShowName.Text = "显示";
       // 
-      // cog_RecordDisplay
+      // tablePanel1
       // 
-      this.cog_RecordDisplay.ColorMapLowerClipColor = System.Drawing.Color.Black;
-      this.cog_RecordDisplay.ColorMapLowerRoiLimit = 0D;
-      this.cog_RecordDisplay.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
-      this.cog_RecordDisplay.ColorMapUpperClipColor = System.Drawing.Color.Black;
-      this.cog_RecordDisplay.ColorMapUpperRoiLimit = 1D;
-      this.cog_RecordDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.cog_RecordDisplay.DoubleTapZoomCycleLength = 2;
-      this.cog_RecordDisplay.DoubleTapZoomSensitivity = 2.5D;
-      this.cog_RecordDisplay.Location = new System.Drawing.Point(0, 33);
-      this.cog_RecordDisplay.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
-      this.cog_RecordDisplay.MouseWheelSensitivity = 1D;
-      this.cog_RecordDisplay.Name = "cog_RecordDisplay";
-      this.cog_RecordDisplay.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cog_RecordDisplay.OcxState")));
-      this.cog_RecordDisplay.Size = new System.Drawing.Size(706, 600);
-      this.cog_RecordDisplay.TabIndex = 0;
+      this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F)});
+      this.tablePanel1.Controls.Add(this.cog_ShowRecordDisplay);
+      this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tablePanel1.Location = new System.Drawing.Point(0, 33);
+      this.tablePanel1.Name = "tablePanel1";
+      this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 494.666F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+      this.tablePanel1.Size = new System.Drawing.Size(706, 600);
+      this.tablePanel1.TabIndex = 4;
+      this.tablePanel1.UseSkinIndents = true;
+      // 
+      // cog_ShowRecordDisplay
+      // 
+      this.cog_ShowRecordDisplay.ColorMapLowerClipColor = System.Drawing.Color.Black;
+      this.cog_ShowRecordDisplay.ColorMapLowerRoiLimit = 0D;
+      this.cog_ShowRecordDisplay.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
+      this.cog_ShowRecordDisplay.ColorMapUpperClipColor = System.Drawing.Color.Black;
+      this.cog_ShowRecordDisplay.ColorMapUpperRoiLimit = 1D;
+      this.tablePanel1.SetColumn(this.cog_ShowRecordDisplay, 0);
+      this.cog_ShowRecordDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.cog_ShowRecordDisplay.DoubleTapZoomCycleLength = 2;
+      this.cog_ShowRecordDisplay.DoubleTapZoomSensitivity = 2.5D;
+      this.cog_ShowRecordDisplay.Location = new System.Drawing.Point(19, 18);
+      this.cog_ShowRecordDisplay.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
+      this.cog_ShowRecordDisplay.MouseWheelSensitivity = 1D;
+      this.cog_ShowRecordDisplay.Name = "cog_ShowRecordDisplay";
+      this.cog_ShowRecordDisplay.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cog_ShowRecordDisplay.OcxState")));
+      this.tablePanel1.SetRow(this.cog_ShowRecordDisplay, 0);
+      this.cog_ShowRecordDisplay.Size = new System.Drawing.Size(668, 489);
+      this.cog_ShowRecordDisplay.TabIndex = 0;
       // 
       // ShowDisplayFrm
       // 
@@ -87,16 +107,21 @@ partial class ShowDisplayFrm
       this.Controls.Add(this.grc_ShowName);
       this.Name = "ShowDisplayFrm";
       this.Size = new System.Drawing.Size(706, 633);
+      this.Load += new System.EventHandler(this.ShowDisplayFrm_Load);
       ((System.ComponentModel.ISupportInitialize)(this.grc_ShowName)).EndInit();
       this.grc_ShowName.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.cog_RecordDisplay)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+      this.tablePanel1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.cog_ShowRecordDisplay)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
+    }
+
+    #endregion
+
+    private DevExpress.XtraEditors.GroupControl grc_ShowName;
+    private DevExpress.Utils.Layout.TablePanel tablePanel1;
+    private CogRecordDisplay cog_ShowRecordDisplay;
   }
-
-  #endregion
-
-  private DevExpress.XtraEditors.GroupControl grc_ShowName;
-  private CogRecordDisplay cog_RecordDisplay;
 }
