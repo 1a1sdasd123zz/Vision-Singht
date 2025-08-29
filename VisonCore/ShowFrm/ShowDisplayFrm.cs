@@ -1,5 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 using Cognex.VisionPro;
+using Cognex.VisionPro.Display;
 
 namespace VisionCore.ShowFrm;
 
@@ -45,6 +48,16 @@ public partial class ShowDisplayFrm : UserControl
     public ShowDisplayFrm()
     {
         InitializeComponent();
+    }
+
+    private void ShowDisplayFrm_Load(object sender, EventArgs e)
+    {
+    }
+
+    private void cog_RecordDisplay_DoubleClick(object sender, EventArgs e)
+    {
+        var frm = new MaxRecordDisplay(ShowImage);
+        frm.Show();
     }
 }
 

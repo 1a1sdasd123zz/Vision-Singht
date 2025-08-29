@@ -102,7 +102,8 @@ public partial class MainForm : Form
 
     private void btn_HardwareCamera_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
     {
-        HardCamera.Instance.FrmCamera2D.Show();
+        var frm = HardCamera.Instance.frm_Camera2D;
+        frm.ShowDialog();
     }
 
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

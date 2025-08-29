@@ -25,7 +25,7 @@ public class HardCamera
 
   public readonly Dictionary<string,Camera2DBase> Cameras = new ();
 
-  public Frm_Camera2D FrmCamera2D { get; private set; }
+  public Frm_Camera2D frm_Camera2D => new Frm_Camera2D();
 
 
   public void Initialization()
@@ -33,7 +33,6 @@ public class HardCamera
     //// ch: 初始化 SDK | en: Initialize SDK
     //SDKSystem.Initialize();
     EnumDevices();
-    FrmCamera2D = new Frm_Camera2D();
   }
 
   public void Unitialization()
