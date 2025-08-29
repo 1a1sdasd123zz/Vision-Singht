@@ -23,9 +23,9 @@ public class HardCamera
   private static readonly Lazy<HardCamera> _lazyInstance = new Lazy<HardCamera>(() => new HardCamera());
   public static HardCamera Instance => _lazyInstance.Value;
 
-  public Dictionary<string,Camera2DBase> Cameras = new ();
+  public readonly Dictionary<string,Camera2DBase> Cameras = new ();
 
-  public Form GetFormCamera2D => new Frm_Camera2D();
+  public Frm_Camera2D FrmCamera2D { get; private set; }
 
 
   public void Initialization()
@@ -33,6 +33,7 @@ public class HardCamera
     //// ch: 初始化 SDK | en: Initialize SDK
     //SDKSystem.Initialize();
     EnumDevices();
+    FrmCamera2D = new Frm_Camera2D();
   }
 
   public void Unitialization()

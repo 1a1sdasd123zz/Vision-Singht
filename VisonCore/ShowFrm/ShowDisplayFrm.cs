@@ -12,44 +12,39 @@ public partial class ShowDisplayFrm : UserControl
     }
     public ICogImage ShowImage
     {
-        get => cog_ShowRecordDisplay.Image;
+        get => cog_RecordDisplay.Image;
         set
         {
-            cog_ShowRecordDisplay.StaticGraphics.Clear();
-            cog_ShowRecordDisplay.InteractiveGraphics.Clear();
-            cog_ShowRecordDisplay.Image = value;
-            cog_ShowRecordDisplay.AutoFit = true;
+            cog_RecordDisplay.StaticGraphics.Clear();
+            cog_RecordDisplay.InteractiveGraphics.Clear();
+            cog_RecordDisplay.Image = value;
+            cog_RecordDisplay.AutoFit = true;
         }
     }
     public ICogImage ContinuousShowImage
     {
-        get => cog_ShowRecordDisplay.Image;
+        get => cog_RecordDisplay.Image;
         set
         {
-            cog_ShowRecordDisplay.StaticGraphics.Clear();
-            cog_ShowRecordDisplay.InteractiveGraphics.Clear();
-            cog_ShowRecordDisplay.Image = value;
+            cog_RecordDisplay.StaticGraphics.Clear();
+            cog_RecordDisplay.InteractiveGraphics.Clear();
+            cog_RecordDisplay.Image = value;
         }
     }
     public ICogRecord ShowRecord
     {
-        get => cog_ShowRecordDisplay.Record;
+        get => cog_RecordDisplay.Record;
         set
         {
-            cog_ShowRecordDisplay.StaticGraphics.Clear();
-            cog_ShowRecordDisplay.InteractiveGraphics.Clear();
-            cog_ShowRecordDisplay.Record = value;
-            cog_ShowRecordDisplay.AutoFit = true;
+            cog_RecordDisplay.StaticGraphics.Clear();
+            cog_RecordDisplay.InteractiveGraphics.Clear();
+            cog_RecordDisplay.Record = value;
+            cog_RecordDisplay.AutoFit = true;
         }
     }
     public ShowDisplayFrm()
     {
         InitializeComponent();
-    }
-
-    private void ShowDisplayFrm_Load(object sender, System.EventArgs e)
-    {
-        
     }
 }
 

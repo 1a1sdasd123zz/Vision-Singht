@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -25,9 +26,9 @@ namespace Vision_Sight
             }
 
             // 3. 遍历libs目录及其所有子目录，收集所有路径
-            var dllPaths = new System.Collections.Generic.List<string>();
-            // 添加根目录
-            dllPaths.Add(libsRootPath);
+            var dllPaths = new List<string> {
+                // 添加根目录
+                libsRootPath };
             // 递归添加所有子目录
             foreach (var subDir in Directory.GetDirectories(libsRootPath, "*", SearchOption.AllDirectories))
             {
@@ -35,8 +36,8 @@ namespace Vision_Sight
             }
 
             // 4. 将所有收集到的路径添加到系统PATH环境变量（临时生效，仅当前进程）
-            string currentPath = Environment.GetEnvironmentVariable("PATH");
-            string newPath = string.Join(";", dllPaths) + ";" + currentPath;
+            var currentPath = Environment.GetEnvironmentVariable("PATH");
+            var newPath = string.Join(";", dllPaths) + ";" + currentPath;
             Environment.SetEnvironmentVariable("PATH", newPath);
 
             // 4. 注册托管程序集解析事件（处理托管DLL如MvCameraControl.Net.dll）

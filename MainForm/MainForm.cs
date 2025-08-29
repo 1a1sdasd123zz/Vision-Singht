@@ -18,7 +18,7 @@ public partial class MainForm : Form
     }
     private void MainForm_Load(object sender, EventArgs e)
     {
-        
+
         frm_Splash.Show();
         frm_Splash.lbl_Splash.Text = "系统启动中……";
         frm_Splash.lbl_Splash.Refresh();
@@ -35,7 +35,7 @@ public partial class MainForm : Form
     {
         frm_Splash.lbl_Splash.Text = "相机加载中……";
         frm_Splash.lbl_Splash.Refresh();
-        HardWareNet.HardCamera.Instance.Initialization();
+        HardCamera.Instance.Initialization();
         frm_Splash.lbl_Splash.Text = "相机完成……";
         frm_Splash.Close();
         WindowState = FormWindowState.Maximized;
@@ -100,9 +100,13 @@ public partial class MainForm : Form
         //frm_Toolbar.RestoreToDefault();
     }
 
-  private void btn_HardwareCamera_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-  {
-      HardCamera.Instance.GetFormCamera2D.Show();
-  }
+    private void btn_HardwareCamera_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+    {
+        HardCamera.Instance.FrmCamera2D.Show();
+    }
 
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        HardCamera.Instance.Unitialization();
+    }
 }
