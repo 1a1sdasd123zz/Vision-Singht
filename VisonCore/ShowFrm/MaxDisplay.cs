@@ -11,24 +11,24 @@ using System.Windows.Forms;
 
 namespace VisionCore.ShowFrm
 {
-    public partial class MaxRecordDisplay : Form
+    public partial class MaxDisplay : Form
     {
-        private ICogImage cogImage;
-        public MaxRecordDisplay(ICogImage cogImage)
+        ICogRecord CogRecord;
+        public MaxDisplay(ICogRecord record)
         {
             InitializeComponent();
-            this.cogImage = cogImage;
+            CogRecord = record;
         }
 
-        private void MaxRecordDisplay_Shown(object sender, EventArgs e)
+        private void MaxDisplay_Shown(object sender, EventArgs e)
         {
-            cog_RecordDisplay.Image = cogImage;
+            cog_RecordDisplay.Record = CogRecord;
             cog_RecordDisplay.AutoFit = true;
         }
 
-        private void MaxRecordDisplay_FormClosed(object sender, FormClosedEventArgs e)
+        private void MaxDisplay_FormClosed(object sender, FormClosedEventArgs e)
         {
-            cogImage = null;
+            CogRecord = null;
         }
     }
 }

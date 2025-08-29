@@ -98,11 +98,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ShowFrm\MaxRecordDisplay.cs">
+    <Compile Include="ShowFrm\MaxDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowFrm\MaxRecordDisplay.Designer.cs">
-      <DependentUpon>MaxRecordDisplay.cs</DependentUpon>
+    <Compile Include="ShowFrm\MaxDisplay.Designer.cs">
+      <DependentUpon>MaxDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="ShowFrm\ShowDisplayFrm.cs">
       <SubType>UserControl</SubType>
@@ -120,8 +120,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShowFrm\MaxRecordDisplay.resx">
-      <DependentUpon>MaxRecordDisplay.cs</DependentUpon>
+    <EmbeddedResource Include="ShowFrm\MaxDisplay.resx">
+      <DependentUpon>MaxDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowFrm\ShowDisplayFrm.resx">
       <DependentUpon>ShowDisplayFrm.cs</DependentUpon>
