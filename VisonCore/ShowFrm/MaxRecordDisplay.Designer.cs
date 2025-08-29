@@ -78,7 +78,7 @@
             this.cog_RecordDisplay.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
             this.cog_RecordDisplay.MouseWheelSensitivity = 1D;
             this.cog_RecordDisplay.Name = "cog_RecordDisplay";
-            this.cog_RecordDisplay.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cog_RecordDisplay.OcxState")));
+            //this.cog_RecordDisplay.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cog_RecordDisplay.OcxState")));
             this.cog_RecordDisplay.Size = new System.Drawing.Size(1222, 856);
             this.cog_RecordDisplay.TabIndex = 1;
             // 

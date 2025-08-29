@@ -9,15 +9,15 @@ namespace HardWareNet.Frm;
 
 public partial class Frm_Camera2D : Form
 {
-  private ShowDisplayFrm user_ShowDisplay;
+  //private ShowDisplayFrm user_ShowDisplay;
   private Camera2DBase Camera2D;
   public Frm_Camera2D()
   {
     InitializeComponent();
-    user_ShowDisplay = new ShowDisplayFrm();
-    user_ShowDisplay.Dock = DockStyle.Fill;
-    split_Display.Panel2.Controls.Add(user_ShowDisplay);
-    Update();
+    //user_ShowDisplay = new ShowDisplayFrm();
+    //user_ShowDisplay.Dock = DockStyle.Fill;
+    //split_Display.Panel2.Controls.Add(user_ShowDisplay);
+    //Update();
   }
 
   private void Frm_Camera2D_Load(object sender, EventArgs e)
@@ -101,7 +101,8 @@ public partial class Frm_Camera2D : Form
     }
     else
     {
-      user_ShowDisplay.ContinuousShowImage = imageData;
+      //user_ShowDisplay.ContinuousShowImage = imageData;
+      user_ShowDisplay.Image = imageData;
     }
   }
 

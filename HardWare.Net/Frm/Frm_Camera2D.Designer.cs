@@ -28,6 +28,8 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Camera2D));
       this.split_Display = new DevExpress.XtraEditors.SplitContainerControl();
       this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
       this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -61,10 +63,12 @@
       this.txt_UserDefinedName = new DevExpress.XtraEditors.LabelControl();
       this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
       this.tabPanel_Main = new DevExpress.Utils.Layout.TablePanel();
+      this.user_ShowDisplay = new Cognex.VisionPro.Display.CogDisplay();
       ((System.ComponentModel.ISupportInitialize)(this.split_Display)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.split_Display.Panel1)).BeginInit();
       this.split_Display.Panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.split_Display.Panel2)).BeginInit();
+      this.split_Display.Panel2.SuspendLayout();
       this.split_Display.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
       this.tablePanel1.SuspendLayout();
@@ -83,6 +87,7 @@
       this.pnl_DevInfo.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tabPanel_Main)).BeginInit();
       this.tabPanel_Main.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.user_ShowDisplay)).BeginInit();
       this.SuspendLayout();
       // 
       // split_Display
@@ -106,6 +111,7 @@
       // 
       this.split_Display.Panel2.Appearance.BackColor = System.Drawing.Color.SlateBlue;
       this.split_Display.Panel2.Appearance.Options.UseBackColor = true;
+      this.split_Display.Panel2.Controls.Add(this.user_ShowDisplay);
       this.split_Display.Panel2.Text = "Panel2";
       this.split_Display.Size = new System.Drawing.Size(1373, 683);
       this.split_Display.SplitterPosition = 621;
@@ -560,6 +566,24 @@
       this.tabPanel_Main.TabIndex = 2;
       this.tabPanel_Main.UseSkinIndents = true;
       // 
+      // user_ShowDisplay
+      // 
+      this.user_ShowDisplay.ColorMapLowerClipColor = System.Drawing.Color.Black;
+      this.user_ShowDisplay.ColorMapLowerRoiLimit = 0D;
+      this.user_ShowDisplay.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
+      this.user_ShowDisplay.ColorMapUpperClipColor = System.Drawing.Color.Black;
+      this.user_ShowDisplay.ColorMapUpperRoiLimit = 1D;
+      this.user_ShowDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.user_ShowDisplay.DoubleTapZoomCycleLength = 2;
+      this.user_ShowDisplay.DoubleTapZoomSensitivity = 2.5D;
+      this.user_ShowDisplay.Location = new System.Drawing.Point(0, 0);
+      this.user_ShowDisplay.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
+      this.user_ShowDisplay.MouseWheelSensitivity = 1D;
+      this.user_ShowDisplay.Name = "user_ShowDisplay";
+      this.user_ShowDisplay.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("user_ShowDisplay.OcxState")));
+      this.user_ShowDisplay.Size = new System.Drawing.Size(737, 683);
+      this.user_ShowDisplay.TabIndex = 0;
+      // 
       // Frm_Camera2D
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -576,6 +600,7 @@
       this.split_Display.Panel1.ResumeLayout(false);
       this.split_Display.Panel1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.split_Display.Panel2)).EndInit();
+      this.split_Display.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.split_Display)).EndInit();
       this.split_Display.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
@@ -597,6 +622,7 @@
       this.pnl_DevInfo.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tabPanel_Main)).EndInit();
       this.tabPanel_Main.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.user_ShowDisplay)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -635,5 +661,6 @@
     private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.Utils.Layout.TablePanel tabPanel_Main;
         private DevExpress.XtraEditors.ComboBoxEdit cmb_HardSource;
+        private Cognex.VisionPro.Display.CogDisplay user_ShowDisplay;
     }
 }

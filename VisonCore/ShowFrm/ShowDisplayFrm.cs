@@ -50,14 +50,10 @@ public partial class ShowDisplayFrm : UserControl
         InitializeComponent();
     }
 
-    private void ShowDisplayFrm_Load(object sender, EventArgs e)
-    {
-    }
-
     private void cog_RecordDisplay_DoubleClick(object sender, EventArgs e)
     {
-        var frm = new MaxRecordDisplay(ShowImage);
-        frm.Show();
+        //var frm = new MaxRecordDisplay(ShowImage);
+        //frm.Show();
     }
 }
 
