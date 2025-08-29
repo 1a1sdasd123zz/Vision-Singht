@@ -23,9 +23,9 @@ public class HardCamera
   private static readonly Lazy<HardCamera> _lazyInstance = new Lazy<HardCamera>(() => new HardCamera());
   public static HardCamera Instance => _lazyInstance.Value;
 
-  public readonly Dictionary<string,Camera2DBase> Cameras = new ();
+  public Dictionary<string,Camera2DBase> Cameras = new ();
 
-  public Frm_Camera2D frm_Camera2D => new Frm_Camera2D();
+  public Form GetFormCamera2D => new Frm_Camera2D();
 
 
   public void Initialization()

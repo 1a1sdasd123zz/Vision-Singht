@@ -14,15 +14,15 @@ namespace Vision_Sight
         [STAThread]
         static void Main()
         {
-            // 1. 定义libs根目录路径（相对于可执行文件目录）
-            string libsRootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "libs");
+            //// 1. 定义libs根目录路径（相对于可执行文件目录）
+            //string libsRootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "libs");
 
-            // 2. 检查libs目录是否存在
-            if (!Directory.Exists(libsRootPath))
-            {
-                MessageBox.Show($"依赖库目录不存在：{libsRootPath}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //// 2. 检查libs目录是否存在
+            //if (!Directory.Exists(libsRootPath))
+            //{
+            //    MessageBox.Show($"依赖库目录不存在：{libsRootPath}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
             // 3. 遍历libs目录及其所有子目录，收集所有路径
             var dllPaths = new System.Collections.Generic.List<string>();
@@ -39,8 +39,8 @@ namespace Vision_Sight
             string newPath = string.Join(";", dllPaths) + ";" + currentPath;
             Environment.SetEnvironmentVariable("PATH", newPath);
 
-            // 4. 注册托管程序集解析事件（处理托管DLL如MvCameraControl.Net.dll）
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+            //// 4. 注册托管程序集解析事件（处理托管DLL如MvCameraControl.Net.dll）
+            //AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
